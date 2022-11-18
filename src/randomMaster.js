@@ -1,6 +1,8 @@
 import './App.css';
 import {character, treasure, landMarks, verb} from "./arrays"
 
+
+
 let numberOfMonsters
 let NumberOfNPC
 let additionMonster = null
@@ -66,8 +68,9 @@ async function getDataMonster1_5() {
         ).then(result => result.json());
         console.log(monster2nd)
         console.log("1 "+monster.results[0].name +", 1 " + monster2nd.results[0].name)
-        return monster + monster2nd
         getDataVerb()
+        return monster + monster2nd
+        
 
 
         }
@@ -479,6 +482,21 @@ function RandomMonster() {
 }
 
 
-
+function RandomMonster1(level){
+    
+    if(level === "1-5"){
+        getDataMonster1_5()
+        getDataLandMarks()
+        getDataTreasure1_5()
+    }else if(level === "6-10"){
+        getDataMonster6_10()
+        getDataLandMarks()
+        getDataTreasure6_10()
+    } else if(level === "11-15"){
+        getDataMonster11_15()
+        getDataLandMarks()
+        getDataTreasure11_15()
+    }
+}
   
-export default RandomMonster;
+export default RandomMonster1;
