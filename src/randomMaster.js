@@ -15,7 +15,8 @@ async function getDataMonster1_5() {
     let decision = Math.floor(Math.random() *3+1)
     let randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
-    
+    console.log("----------------------------------------------------")
+
     console.log("Level 1-5")
     if(decision === 1){
         //Just NPC
@@ -66,7 +67,8 @@ async function getDataMonster1_5() {
         console.log(monster2nd)
         console.log("1 "+monster.results[0].name +", 1 " + monster2nd.results[0].name)
         return monster + monster2nd
-        
+        getDataVerb()
+
 
         }
         console.log(numberOfMonsters+" "+monster.results[0].name)
@@ -101,13 +103,12 @@ async function getDataMonster1_5() {
 
         console.log(npc)
         console.log(NumberOfNPC+" "+npc.results[0].name)
+        getDataVerb()
 
         if(ratingM === "1/4"){
-            console.log("1/4")
             numberOfMonsters = Math.floor(Math.random()*6+2)
             additionMonster = null
         }else if(ratingM === "1/2"){
-            console.log("1/2")
             numberOfMonsters = Math.floor(Math.random()*2+1)
             additionMonster = null
         }else if(ratingM === "1"){
@@ -116,7 +117,6 @@ async function getDataMonster1_5() {
         }
         console.log(monster)
         console.log("1 "+monster.results[0].name)
-        
         
         getDataVerb()
         return monster + " " + npc
@@ -137,6 +137,7 @@ async function getDataMonster6_10() {
     let randomMonster =character.monster.M6_10[Math.floor(Math.random()*character.monster.M6_10.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     additionMonster = null
+    console.log("----------------------------------------------------")
     console.log("Level 6-10")
     if(decision === 1){
         //Just NPC
@@ -219,6 +220,7 @@ async function getDataMonster6_10() {
 
         console.log(npc)
         console.log(NumberOfNPC+" "+npc.results[0].name)
+        getDataVerb()
 
         if(ratingM === "1"){
             numberOfMonsters = Math.floor(Math.random()*5+4)
@@ -251,6 +253,173 @@ function getDataTreasure6_10(){
     console.log(randomTreasure)
 }
 
+
+async function getDataMonster11_15() {
+    let decision = Math.floor(Math.random() *3+1)
+    let randomMonster = character.monster.M11_15[Math.floor(Math.random()*character.monster.M11_15.length)] 
+    let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
+    console.log("----------------------------------------------------")
+
+    console.log("Level 11-15")
+    if(decision === 1){
+        //Just NPC
+        const npc = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+randomNPC+"&document=&document__slug="
+        ).then(result => result.json());
+        let rating = npc.results[0].challenge_rating
+        console.log(npc)
+        verb12 = 1
+
+        randomMonster = null
+
+        if(rating === "0" || rating === "1/8" || rating === "1/4",rating === "1/2" || rating === "1"){
+            NumberOfNPC = Math.floor(Math.random()*6+9);
+        }else if(rating === "2" || rating === "3"|| rating === "3"){
+            NumberOfNPC = Math.floor(Math.random()*6+4);
+        }else{
+            NumberOfNPC = 3
+        }
+        console.log(NumberOfNPC+" "+npc.results[0].name)
+
+        getDataVerb()
+        return npc
+
+    }else if(decision === 2){ 
+        //Just Monster
+        const monster = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+randomMonster+"&document=&document__slug="
+        ).then(result => result.json());
+        console.log(monster)
+        let rating = monster.results[0].challenge_rating
+        verb12=2
+
+        if(rating === "5"){
+            
+            numberOfMonsters = Math.floor(Math.random()*2+3)
+            additionMonster = null
+        }else if(rating === "6"){
+            numberOfMonsters = Math.floor(Math.random()*3+1)
+            additionMonster = null
+        }else if(rating === "7"){
+            numberOfMonsters = Math.floor(Math.random()*3+1)
+            additionMonster = null
+        }else if(rating === "8"){
+            numberOfMonsters = Math.floor(Math.random()*2+1)
+            additionMonster = null
+        }else if(rating === "9"){
+            numberOfMonsters = Math.floor(Math.random()*2+1)
+            additionMonster = null
+        }else if(rating === "10"){
+            numberOfMonsters = 1
+            additionMonster = true
+        }else if(rating === "11"){
+            numberOfMonsters = 1
+            additionMonster = true
+        }else if(rating === "12"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }else if(rating === "13"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }else if(rating === "14"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }else if(rating === "15"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }
+
+
+
+        if (additionMonster === true){
+            const monster2nd = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+character.monster.M1_5[numberOfMonsters = Math.floor(Math.random()*6)] +"&document=&document__slug="
+        ).then(result => result.json());
+        console.log(monster2nd)
+        console.log("1 "+monster.results[0].name +", 1 " + monster2nd.results[0].name)
+        getDataVerb()
+
+        return monster + monster2nd
+
+        }
+        console.log(numberOfMonsters+" "+monster.results[0].name)
+
+        getDataVerb()
+        return monster
+
+
+    } else if (decision === 3){
+        //Both
+        const monster = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+randomMonster+"&document=&document__slug="
+        ).then(result => result.json());
+        const npc = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+randomNPC+"&document=&document__slug="
+        ).then(result => result.json());
+
+        let ratingM = monster.results[0].challenge_rating
+        let ratingNPC = npc.results[0].challenge_rating
+        verb12 = 2
+
+
+        
+
+        if(ratingNPC === "0" || ratingNPC === "1/8" || ratingNPC === "1/4",ratingNPC === "1/2" || ratingNPC === "1"){
+            NumberOfNPC = Math.floor(Math.random()*6+9);
+        }else if(ratingNPC === "2" || ratingNPC === "3"|| ratingNPC === "3"){
+            NumberOfNPC = Math.floor(Math.random()*6+4);
+        }else{
+            NumberOfNPC = 3
+        }
+
+        console.log(npc)
+        console.log(NumberOfNPC+" "+npc.results[0].name)
+        getDataVerb()
+
+        if(ratingM === "5"){
+            
+            numberOfMonsters = Math.floor(Math.random()*2+3)
+            additionMonster = null
+        }else if(ratingM === "6"){
+            numberOfMonsters = Math.floor(Math.random()*3+1)
+            additionMonster = null
+        }else if(ratingM === "7"){
+            numberOfMonsters = Math.floor(Math.random()*3+1)
+            additionMonster = null
+        }else if(ratingM === "8"){
+            numberOfMonsters = Math.floor(Math.random()*2+1)
+            additionMonster = null
+        }else if(ratingM === "9"){
+            numberOfMonsters = Math.floor(Math.random()*2+1)
+            additionMonster = null
+        }else if(ratingM === "10"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }else if(ratingM === "11"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }else if(ratingM === "12"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }else if(ratingM === "13"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }else if(ratingM === "14"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }else if(ratingM === "15"){
+            numberOfMonsters = 1
+            additionMonster = null
+        }
+        console.log(monster)
+        console.log("1 "+monster.results[0].name)
+        
+        getDataVerb()
+        return monster + " " + npc
+
+    }
+    
+    
+}
+function getDataTreasure11_15(){
+    randomTreasure = treasure.Eleven_Fifteen[Math.floor(Math.random()*treasure.Eleven_Fifteen.length)]
+    console.log(randomTreasure)
+}
 
 //All Levels
 function getDataLandMarks(){
@@ -297,7 +466,13 @@ function RandomMonster() {
 
         }}>6-10</button>
 
-        <button className='App'>11-15</button>
+        <button className='App' onClick={ ()=> {
+            getDataMonster11_15()
+            getDataLandMarks()
+            getDataTreasure11_15()
+            
+
+        }}>11-15</button>
         
       </div>
     );

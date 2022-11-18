@@ -9,7 +9,6 @@ export let verb = {
         "Jumping Up and Down",
         "Staring Straight at you With out Blinking",
         "Sleeping",
-        "Looking at the ground and Sniffing",
         "on High Alert Look For People",
         "Chasing Someone",  
         "Digging a hole",
@@ -32,7 +31,8 @@ export let verb = {
         "Searching For Water",
         "Shultering from a Storm",
         "Stuck In Mud",
-        "Attempting to Catch Fish"
+        "Attempting to Catch Fish",
+        "hiding from a nearby threat",
     ],
 
     humanoid : [
@@ -133,12 +133,10 @@ export let character = {
             "Owlbear",
             "Werewolf",
             
-            
             "Ghost", //Start of Challenge 4 Ratings
             "Red Dragon Wyrmling",
             "Wereboar",
             "Weretiger",
-            
             
             "Air Elemental",//Start of Challege 5 Rating
             "Earth Elemental",
@@ -148,11 +146,9 @@ export let character = {
             "Unicorn",
             "Werebear",
             "Wraith", 
-            
            
             "Drider", //Start of Challege 6 Ratings
             "Wyvern",
-            
             
             "Shield Guardian",//Start of Number 7
             "Stone Giant",
@@ -161,11 +157,49 @@ export let character = {
         ],
         M11_15:[
 
+            "Air Elemental",//Start of Challege 5 Rating
+            "Earth Elemental",
+            "Fire Elemental",
+            "Hill Giant",
+            "Troll",
+            "Unicorn",
+            "Werebear",
+            "Wraith", 
+           
+            "Drider", //Start of Challege 6 Ratings
+            "Wyvern",
+            
+            "Shield Guardian",//Start of Number 7
+            "Stone Giant",
+            "Young Black Dragon",
+
             "Frost Giant", //Start of Number 8
             "Young Bronze Dragon",
-            "",
-            "",
+            
+            "Clay Golem", //start of number 9
+            "Cloud Giant", 
+            "Young Silver Dragon",
+            
+            "Guardian Naga", //start of 10
+            "Young Gold Dragon",
+            
+            "Chain Devil", //start of 11
+            "Djinni",
+            "Roc",
+            
+            "Bone Devil",//start of 12
+            
+            "Adult Brass Dragon",//start of 13
+            "Storm Giant",
+            "Vampire",
 
+            "Adult Black Dragon",//start of 14
+            "Adult Copper Dragon",
+
+            "Adult Bronze Dragon",//start of 15
+            "Adult Green Dragon",
+            "Mummy Lord",
+            "Purple Worm",
         ],
     },
     npc : [
@@ -301,6 +335,7 @@ export let treasure ={
         "Potion of Water Breathing",
         "Potion of Heroism",
         "Immovable Rod",
+        "Bracers of Archery",
         "Winged Boots",
         "Restorative Ointment",
         "Ring of Evasion",
@@ -308,7 +343,30 @@ export let treasure ={
 
     ],
     Eleven_Fifteen: [
-
+        ((Math.floor(Math.random() *5) +1)*3) + " gems (50GP each) + " + ((Math.floor(Math.random() *5) +1)*5) + " GP",
+        ((Math.floor(Math.random() *5) +1)*4) + " gems (10GP each) + " + ((Math.floor(Math.random() *5) +1)*5) + " GP",
+        ((Math.floor(Math.random() *12) +15)*100) + " CP + " + ((Math.floor(Math.random() *5) +1)*5) + " GP",
+        ((Math.floor(Math.random() *5) +1)*2) + " gems (100GP each) + ", ((Math.floor(Math.random() *12) +15)*110) + " CP",
+        ((Math.floor(Math.random() *12) +15)*100) + " CP",
+        ((Math.floor(Math.random() *12) +15)*110) + " CP",
+        (((Math.floor(Math.random() *6) +1)*10)) + " PP",
+        (((Math.floor(Math.random() *6) +1)*10)) + " PP",
+        (((Math.floor(Math.random() *6) +1)*5)*10) + " GP",
+        (((Math.floor(Math.random() *6) +1)*7)*11) + " GP",
+        ((Math.floor(Math.random() *5) +1)*3) + " gems (10GP each)",
+        ((Math.floor(Math.random() *5) +2)*4) + " gems (10GP each)",
+        ((Math.floor(Math.random() *5) +1)*2) + " gems (100GP each)",
+        ((Math.floor(Math.random() *5) +1)) + " gems (500GP each)",
+        ((Math.floor(Math.random() *5) +2)*2) + " gems (50GP each)",
+        ((Math.floor(Math.random() *5) +1)*10) + " SP + " + (((Math.floor(Math.random() *6) +1)*3)) + " PP" ,
+        "Gem of Seeing",
+        "Potion of healing",
+        "Potion of Heroism",
+        "Giant Slayer",
+        "Immovable Rod",
+        "Berserker Axe",
+        "Boots of Speed",
+        "Brazier of Commanding Fire Elementals",
     ],
 }
 
