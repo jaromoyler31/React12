@@ -41,10 +41,10 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
             </div>
 
             <div className='text-light'>
-                <p>They are {numberNPC} {npc} at {landmark} The {npc} is {verbs}</p> 
+                <p>There are {numberNPC} {npc} at {landmark} The {npc} is {verbs}</p> 
 
                 <p>Landmark Effect: {landEffect}</p>
-                <p>{treasure}</p>
+                <p>Treasure: {treasure} XP: {}</p>
             </div>
             </>
 
@@ -81,7 +81,7 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
                 <p>They are {numberMonster} {monster} at {landmark} The {monster} is {verbs}</p> 
 
                 <p>Landmark Effect: {landEffect}</p>
-                <p>{treasure}</p>
+                <p>Treasure: {treasure} XP: {}</p>
             </div>
             </>
 
@@ -137,4 +137,4 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
 
         )
     }
-} 
+}
