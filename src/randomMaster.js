@@ -14,10 +14,12 @@ export let randomVerb // important
 export let randomNPCinfo // important
 export let randomEffect
 export let decisionN
+
 //level 1-5
 async function getDataMonster1_5() {
     let decision = Math.floor(Math.random() *3+1)
     let randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
+
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
     decisionN = decision
@@ -433,3 +435,5 @@ function RandomMonster1(level){
 }
   
 export default RandomMonster1;
+
+
