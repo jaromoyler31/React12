@@ -13,7 +13,7 @@ export default function Encounter() {
     const [level, setLevel ] = useState(1-5)
 
     
-    const {verb,setVerb, landmark,setLandMark,treasure,setTreasure,npc,setNPC, monster,setMonster,numberMonster,setNumberMonster,numberNPC,setNumberNPC,randomLandMarkEffect,setRandomEffect} = useRandom()
+    const {verbs,setVerb, landmark,setLandMark,treasure,setTreasure,npc,setNPC, monster,setMonster,numberMonster,setNumberMonster,numberNPC,setNumberNPC,randomLandMarkEffect,setRandomEffect} = useRandom()
 
     const clickHandle = event => {
         event.preventDefault()
@@ -47,7 +47,7 @@ export default function Encounter() {
             </form>
 
 
-            <RandomResult verb = {verb} landmark={landmark} treasure={treasure} npc={npc} monster={monster} numberMonster={numberMonster} numberNPC={numberNPC} randomLandMarkEffect={randomLandMarkEffect}></RandomResult>
+            <RandomResult verbs = {verbs} landmark={landmark} treasure={treasure} npc={npc} monster={monster} numberMonster={numberMonster} numberNPC={numberNPC} randomLandMarkEffect={randomLandMarkEffect}></RandomResult>
 
             
         </div>
