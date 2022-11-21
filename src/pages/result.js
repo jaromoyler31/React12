@@ -10,13 +10,7 @@ export default function Reuslt(){
     const [open, setOpen] = useState(false);
 
 
-
-   
-
-
-
     if(decisionN === 1){
-        console.log("11111111")
         return(
             <>
             <div className="npc-stats">
