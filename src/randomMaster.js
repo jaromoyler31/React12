@@ -16,7 +16,7 @@ export let randomEffect
 export let decisionN
 //level 1-5
 async function getDataMonster1_5() {
-    let decision = 2 //Math.floor(Math.random() *3+1)
+    let decision = Math.floor(Math.random() *3+1)
     let randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
@@ -43,6 +43,7 @@ async function getDataMonster1_5() {
         }
         console.log(NumberOfNPC+" "+npc.results[0].name)
         
+        randomNPCinfo = npc.results[0].name
         getDataVerb()
         return npc
 
@@ -64,7 +65,7 @@ async function getDataMonster1_5() {
             numberOfMonsters = 1
         }
 
-        
+
         console.log(numberOfMonsters+" "+monster.results[0].name)
         randomMonsterInfo =monster.results[0].name
         getDataVerb()
@@ -109,6 +110,9 @@ async function getDataMonster1_5() {
         console.log(monster)
         console.log("1 "+monster.results[0].name)
         
+        randomMonsterInfo =monster.results[0].name
+        randomNPCinfo = npc.results[0].name
+
         getDataVerb()
         return monster + " " + npc
 
@@ -123,7 +127,7 @@ function getDataTreasure1_5(){
 
 //level 6-10
 async function getDataMonster6_10() {
-    let decision =Math.floor(Math.random() *3+1)
+    let decision = Math.floor(Math.random() *3+1)
     let randomMonster =character.monster.M6_10[Math.floor(Math.random()*character.monster.M6_10.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
@@ -147,9 +151,9 @@ async function getDataMonster6_10() {
         }else{
             NumberOfNPC = 1
         }
-        
-        console.log(NumberOfNPC+" "+npc.results[0].name)
 
+        randomNPCinfo = npc.results[0].name
+        console.log(NumberOfNPC+" "+npc.results[0].name)
         getDataVerb()
         return npc
 
@@ -178,6 +182,7 @@ async function getDataMonster6_10() {
         }
 
         console.log(numberOfMonsters+" "+monster.results[0].name)
+        randomMonsterInfo =monster.results[0].name
 
         getDataVerb()
         return monster
@@ -229,7 +234,9 @@ async function getDataMonster6_10() {
         console.log(monster)
         console.log("1 "+monster.results[0].name)
         
-        
+        randomMonsterInfo =monster.results[0].name
+        randomNPCinfo = npc.results[0].name
+
         getDataVerb()
         return monster + " " + npc
 
@@ -242,7 +249,7 @@ function getDataTreasure6_10(){
     console.log(randomTreasure)
 }
 
-
+//level 11-15
 async function getDataMonster11_15() {
     let decision = Math.floor(Math.random() *3+1)
     let randomMonster = character.monster.M11_15[Math.floor(Math.random()*character.monster.M11_15.length)] 
@@ -269,6 +276,7 @@ async function getDataMonster11_15() {
         }
         console.log(NumberOfNPC+" "+npc.results[0].name)
 
+        randomNPCinfo = npc.results[0].name
         getDataVerb()
         return npc
 
@@ -306,6 +314,8 @@ async function getDataMonster11_15() {
         }
 
         console.log(numberOfMonsters+" "+monster.results[0].name)
+
+        randomMonsterInfo =monster.results[0].name
 
         getDataVerb()
         return monster
@@ -364,6 +374,9 @@ async function getDataMonster11_15() {
         console.log(monster)
         console.log("1 "+monster.results[0].name)
         
+        randomMonsterInfo =monster.results[0].name
+        randomNPCinfo = npc.results[0].name
+
         getDataVerb()
         return monster + " " + npc
 
