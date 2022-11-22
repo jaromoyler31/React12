@@ -48,7 +48,6 @@ export default function Encounter() {
 
 
             <RandomResult verb = {verb} landmark={landmark} treasure={treasure} npc={npc} monster={monster} numberMonster={numberMonster} numberNPC={numberNPC} randomLandMarkEffect={randomLandMarkEffect}></RandomResult>
-
             
         </div>
         

@@ -13,11 +13,14 @@ export let randomTreasure //important
 export let randomVerb // important
 export let randomNPCinfo // important
 export let randomEffect
-export let decisionN
+export let decisionN    
+export let randomMonster 
+
+
 //level 1-5
 async function getDataMonster1_5() {
     let decision = 2 //Math.floor(Math.random() *3+1)
-    let randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
+    randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
     decisionN = decision
@@ -124,7 +127,7 @@ function getDataTreasure1_5(){
 //level 6-10
 async function getDataMonster6_10() {
     let decision =Math.floor(Math.random() *3+1)
-    let randomMonster =character.monster.M6_10[Math.floor(Math.random()*character.monster.M6_10.length)] 
+    randomMonster =character.monster.M6_10[Math.floor(Math.random()*character.monster.M6_10.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
     console.log("Level 6-10")
@@ -245,7 +248,7 @@ function getDataTreasure6_10(){
 
 async function getDataMonster11_15() {
     let decision = Math.floor(Math.random() *3+1)
-    let randomMonster = character.monster.M11_15[Math.floor(Math.random()*character.monster.M11_15.length)] 
+    randomMonster = character.monster.M11_15[Math.floor(Math.random()*character.monster.M11_15.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
 
