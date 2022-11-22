@@ -91,7 +91,6 @@ export let character = {
             
             
             "Dire Wolf", //Start of Challenge 1 Ratings
-            "HobGoblin",
             "Animated Armor",
             "Brown Bear",
             "Bugbear",
