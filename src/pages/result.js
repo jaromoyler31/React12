@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import Collapse from 'react-bootstrap/Collapse';
-import { decisionN  } from '../randomMaster';
+import { decisionN, monsterStrength  } from '../randomMaster';
 import { verb } from '../arrays';
 let new_verb = verb.humanoid[Math.floor(Math.random()*verb.humanoid.length)]
 export default function RandomResult({verbs, landmark,treasure,npc, monster,numberMonster,numberNPC,randomLandMarkEffect}){
@@ -32,9 +32,7 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
                     <Collapse in={open}>
                     
                         <div id="example-collapse-text" className="text-light">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                        labore wes anderson cred nesciunt sapiente ea proident.
+                        {monsterStrength}
                         </div>
                     </Collapse>
                 </div>
@@ -69,9 +67,7 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
                     <Collapse in={open}>
                     
                         <div id="example-collapse-text" className="text-light">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                        labore wes anderson cred nesciunt sapiente ea proident.
+                        {monsterStrength}
                         </div>
                     </Collapse>
                 </div>

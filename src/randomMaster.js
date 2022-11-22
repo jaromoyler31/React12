@@ -14,11 +14,13 @@ export let randomVerb // important
 export let randomNPCinfo // important
 export let randomEffect
 export let decisionN
+export let randomMonster
+export let monsterStrength
 
 //level 1-5
 async function getDataMonster1_5() {
     let decision = Math.floor(Math.random() *3+1)
-    let randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
+    randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
@@ -54,6 +56,7 @@ async function getDataMonster1_5() {
         const monster = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+randomMonster+"&document=&document__slug="
         ).then(result => result.json());
         console.log(monster)
+        monsterStrength = monster.results[0].strength
         let rating = monster.results[0].challenge_rating
         verb12=2
 
