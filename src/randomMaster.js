@@ -69,7 +69,7 @@ async function getDataMonster1_5() {
 
 
         console.log(numberOfMonsters+" "+monster.results[0].name)
-        randomMonsterInfo =monster.results[0].name
+        randomMonsterInfo = monster.results[0].name
         getDataVerb()
         return monster
 
