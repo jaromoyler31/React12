@@ -1,5 +1,4 @@
 import NavComp from '../components/NavComp';
-import Collapse from 'react-bootstrap/Collapse';
 import React, { useState } from 'react';
 import RandomMonster1 from '../randomMaster'; 
 import {randomMonsterInfo, randomLandMark, randomTreasure, randomVerb,randomNPCinfo, numberOfMonsters, NumberOfNPC, randomEffect} from "../randomMaster"
@@ -33,9 +32,9 @@ export default function Encounter() {
     <>
         <NavComp></NavComp>
         <div>
-            <form>
-            <label className="text-light"> Select Difficulty:  
-                <select name="level" onChange={(e)=> setLevel(e.target.value)}>
+            <form className="my-5">
+            <label className="text-light"> Select Difficulty:   
+                <select className="ms-2" name="level" onChange={(e)=> setLevel(e.target.value)}>
                     <option value= {null} >Select Level </option>
                     <option value="1-5">Levels 1-5</option>
                     <option value="6-10">Levels 6-10</option>
@@ -43,7 +42,7 @@ export default function Encounter() {
                 </select>
             </label>
             <br />
-            <input className="landing-button" type="submit" value="Generate Encounter" onClick={clickHandle} />
+            <input className="mt-5 px-4 py-2" type="submit" value="Generate Encounter" onClick={clickHandle} />
             </form>
 
 
