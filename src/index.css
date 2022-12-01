@@ -13,8 +13,13 @@ body {
   background-color: #303236;
 }
 
-.navbar, .holder {
+.navbar {
+  flex-wrap: nowrap;
+}
+
+.navbar, .holder, .offcanvas-header, .offcanvas-body {
   background-color: #1f1f1f;
+  color: #fff;
 }
 
 code {
