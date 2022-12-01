@@ -12,7 +12,7 @@ export default function Landing() {
             <video src="https://verzifier.com/wp-content/uploads/2022/11/FCVideo.mp4" autoPlay loop muted />
             <div className="landing-content">
                 <img className="img-fluid" alt="Fighting Chance" href="#" src={FCLogo} />
-                <Link to={'/encounter'}><Button className="landing-button" variant="danger">Generate Encounter</Button></Link>
+                <Link to={'/encounter'}><Button className="landing-button button">Generate Encounter</Button></Link>
             </div>
         </div>
     )
