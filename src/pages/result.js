@@ -166,7 +166,7 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
                         <Col lg={{ span: 6, offset: 3 }}>
                             <p className="text-start">There are {numberNPC} {npc} at {landmark} The {npc} is {verbs}</p> 
                             <p className="text-start">Landmark Effect: {landEffect}</p>
-                            <p>Treasure: {treasure} XP: {}</p>
+                            <p>Treasure: {treasure} {}</p>
                         </Col>
                     </Row>
             </Container>
@@ -213,7 +213,7 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
                     <Col lg={{ span: 6, offset: 3 }}>
                         <p className="text-start">They are {numberMonster} {monster} at {landmark} The {monster} is {verbs}</p> 
                         <p className="text-start">Landmark Effect: {landEffect}</p>
-                        <p>Treasure: {treasure} XP: {}</p>
+                        <p>Treasure: {treasure} {}</p>
                     </Col>
                 </Row>
             </Container>
