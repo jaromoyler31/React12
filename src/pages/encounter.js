@@ -6,7 +6,6 @@ import RandomResult from "./result"
 import useRandom from './useRandom';
 
 export default function Encounter() {
-
     
     
     const [level, setLevel ] = useState('1-5')

@@ -433,11 +433,7 @@ export let landMarks = {
             Effect: "Entering The Cave The dog Will Cumble and Block The Enterence. Anyone Who gets hit by a rock gets delt by 2d6 Bludgering Damage"
         },
         {
-            main: "Walk Accross a Black Brick road",
-            Effect: "This Road Takes them to Where Ever There Going But There are always Ambushes Await For Travelers. "
-        },
-        {
-            main: "There are 7 Sword in The Ground",
+            main: "A Clearing and There are 7 Sword in The Ground",
             Effect: "To Pull The Swords Out You need to Make a Athletics Check of 17. The Sword Gives You a plus 2 to Attack roll And Dice But it Also Has this Curse Attached to It: " +curses[Math.floor(Math.random() * curses.length+1)] + " If You Get Rid of the Sword The Curse Stays With You."
         },
         {

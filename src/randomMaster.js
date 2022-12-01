@@ -18,6 +18,8 @@ export let randomMonster
 
 
 //Getting Stats for Monsters
+export let monsterSkills
+export let monsterActions
 export let monsterType
 export let monsterSize
 export let monsterAC
@@ -33,6 +35,8 @@ export let monsterLang
 
 
 //Getting Stats for NPCs
+export let npcSkills
+export let npcActions
 export let npcType
 export let npcSize
 export let npcAC
@@ -91,6 +95,8 @@ async function getDataMonster1_5() {
         npcWis = npc.results[0].wisdom
         npcCha = npc.results[0].charisma
         npcLang = npc.results[0].languages
+        npcSkills = npc.results[0].special_abilities
+        npcActions = npc.results[0].actions
 
         getDataVerb()
         return npc
@@ -114,6 +120,8 @@ async function getDataMonster1_5() {
         monsterWis = monster.results[0].wisdom
         monsterCha = monster.results[0].charisma
         monsterLang = monster.results[0].languages
+        monsterActions = monster.results[0].actions
+        monsterSkills = monster.results[0].special_abilities
 
         let rating = monster.results[0].challenge_rating
         verb12=2
@@ -130,7 +138,8 @@ async function getDataMonster1_5() {
 
 
         console.log(numberOfMonsters+" "+monster.results[0].name)
-        randomMonsterInfo =monster.results[0].name
+        randomMonsterInfo = monster.results[0].name
+        console.log(randomMonsterInfo)
         getDataVerb()
         return monster
 
@@ -185,6 +194,8 @@ async function getDataMonster1_5() {
         monsterWis = monster.results[0].wisdom
         monsterCha = monster.results[0].charisma
         monsterLang = monster.results[0].languages
+        monsterSkills = monster.results[0].special_abilities
+        monsterActions = monster.results[0].actions
 
 
         console.log("1 "+monster.results[0].name)
@@ -205,6 +216,8 @@ async function getDataMonster1_5() {
         npcWis = npc.results[0].wisdom
         npcCha = npc.results[0].charisma
         npcLang = npc.results[0].languages
+        npcSkills = npc.results[0].special_abilities
+        npcActions = npc.results[0].actions
 
 
         getDataVerb()
@@ -260,7 +273,8 @@ async function getDataMonster6_10() {
         npcWis = npc.results[0].wisdom
         npcCha = npc.results[0].charisma
         npcLang = npc.results[0].languages
-
+        npcSkills = npc.results[0].special_abilities
+        npcActions = npc.results[0].actions
 
         console.log(NumberOfNPC+" "+npc.results[0].name)
         getDataVerb()
@@ -285,7 +299,8 @@ async function getDataMonster6_10() {
         monsterWis = monster.results[0].wisdom
         monsterCha = monster.results[0].charisma
         monsterLang = monster.results[0].languages
-
+        monsterSkills = monster.results[0].special_abilities
+        monsterActions = monster.results[0].actions
 
         let rating = monster.results[0].challenge_rating
         verb12=2
@@ -372,7 +387,8 @@ async function getDataMonster6_10() {
         monsterWis = monster.results[0].wisdom
         monsterCha = monster.results[0].charisma
         monsterLang = monster.results[0].languages
-
+        monsterSkills = monster.results[0].special_abilities
+        monsterActions = monster.results[0].actions
         
         randomMonsterInfo =monster.results[0].name
         randomNPCinfo = npc.results[0].name
@@ -389,7 +405,8 @@ async function getDataMonster6_10() {
         npcWis = npc.results[0].wisdom
         npcCha = npc.results[0].charisma
         npcLang = npc.results[0].languages
-
+        npcSkills = npc.results[0].special_abilities
+        npcActions = npc.results[0].actions
 
         getDataVerb()
         return monster + " " + npc
@@ -444,6 +461,8 @@ async function getDataMonster11_15() {
         npcWis = npc.results[0].wisdom
         npcCha = npc.results[0].charisma
         npcLang = npc.results[0].languages
+        npcSkills = npc.results[0].special_abilities
+        npcActions = npc.results[0].actions
 
         getDataVerb()
         return npc
@@ -467,6 +486,8 @@ async function getDataMonster11_15() {
         monsterWis = monster.results[0].wisdom
         monsterCha = monster.results[0].charisma
         monsterLang = monster.results[0].languages
+        monsterSkills = monster.results[0].special_abilities
+        monsterActions = monster.results[0].actions
 
         let rating = monster.results[0].challenge_rating
         verb12=2
@@ -571,7 +592,9 @@ async function getDataMonster11_15() {
         monsterWis = monster.results[0].wisdom
         monsterCha = monster.results[0].charisma
         monsterLang = monster.results[0].languages
-
+        monsterSkills = monster.results[0].special_abilities
+        monsterActions = monster.results[0].actions
+        
         randomMonsterInfo =monster.results[0].name
         randomNPCinfo = npc.results[0].name
 
@@ -587,6 +610,8 @@ async function getDataMonster11_15() {
         npcWis = npc.results[0].wisdom
         npcCha = npc.results[0].charisma
         npcLang = npc.results[0].languages
+        npcSkills = npc.results[0].special_abilities
+        npcActions = npc.results[0].actions
 
         getDataVerb()
         return monster + " " + npc
@@ -643,7 +668,8 @@ async function RandomMonster1(level){
         ])
     }
 }
-  
-export default RandomMonster1;
 
 
+
+export default RandomMonster1; 
+ 
