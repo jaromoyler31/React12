@@ -5,15 +5,6 @@ import Table from 'react-bootstrap/Table';
 export default function MonsterStats() {
   return (
     <div>
-        <div>
-            <ul>
-                <li><span>Armor Class: </span>{monsterAC}</li>
-                <li><span>Hit Points: </span>{monsterHP}</li>
-                <li><span>Speed: </span>{monsterSpeed}ft</li>
-                <li><span>Languages: </span>{monsterLang}</li>
-            </ul>
-        </div>
-
     <Table responsive>
         <thead className="text-white">
             <tr>
@@ -37,6 +28,14 @@ export default function MonsterStats() {
         </tbody>
 
     </Table>
+        <div>
+            <ul>
+                <li><span>Armor Class: </span>{monsterAC}</li>
+                <li><span>Hit Points: </span>{monsterHP}</li>
+                <li><span>Speed: </span>{monsterSpeed}ft</li>
+                <li><span>Languages: </span>{monsterLang}</li>
+            </ul>
+        </div>
     </div>
 
   );

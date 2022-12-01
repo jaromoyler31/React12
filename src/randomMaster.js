@@ -16,6 +16,7 @@ export let randomEffect
 export let decisionN
 export let randomMonster
 
+
 //Getting Stats for Monsters
 export let monsterType
 export let monsterSize
@@ -31,7 +32,19 @@ export let monsterCha
 export let monsterLang
 
 
-export let npcStrength
+//Getting Stats for NPCs
+export let npcType
+export let npcSize
+export let npcAC
+export let npcHP
+export let npcSpeed
+export let npcStr
+export let npcDex
+export let npcCon
+export let npcInt
+export let npcWis
+export let npcCha
+export let npcLang
 
 //level 1-5
 async function getDataMonster1_5() {
@@ -64,7 +77,20 @@ async function getDataMonster1_5() {
         console.log(NumberOfNPC+" "+npc.results[0].name)
         
         randomNPCinfo = npc.results[0].name
-        npcStrength = npc.results[0].strength
+
+        // getting NPC stats
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
 
         getDataVerb()
         return npc
@@ -165,7 +191,21 @@ async function getDataMonster1_5() {
         
         randomMonsterInfo =monster.results[0].name
         randomNPCinfo = npc.results[0].name
-        npcStrength = npc.results[0].strength
+        
+        // Getting NPC stats
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
+
 
         getDataVerb()
         return monster + " " + npc
@@ -207,7 +247,20 @@ async function getDataMonster6_10() {
         }
 
         randomNPCinfo = npc.results[0].name
-        npcStrength = npc.results[0].strength
+        
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
+
 
         console.log(NumberOfNPC+" "+npc.results[0].name)
         getDataVerb()
@@ -323,7 +376,19 @@ async function getDataMonster6_10() {
         
         randomMonsterInfo =monster.results[0].name
         randomNPCinfo = npc.results[0].name
-        npcStrength = npc.results[0].strength
+        
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
 
 
         getDataVerb()
@@ -366,7 +431,19 @@ async function getDataMonster11_15() {
         console.log(NumberOfNPC+" "+npc.results[0].name)
 
         randomNPCinfo = npc.results[0].name
-        npcStrength = npc.results[0].strength
+        
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
 
         getDataVerb()
         return npc
@@ -497,8 +574,19 @@ async function getDataMonster11_15() {
 
         randomMonsterInfo =monster.results[0].name
         randomNPCinfo = npc.results[0].name
-        npcStrength = npc.results[0].strength
 
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
 
         getDataVerb()
         return monster + " " + npc
@@ -534,24 +622,25 @@ function getDataVerb(){
 
 
 
-
-
-
-
-function RandomMonster1(level){
+async function RandomMonster1(level){
     
     if(level === "1-5"){
-        getDataMonster1_5()
-        getDataLandMarks()
-        getDataTreasure1_5()
+        await Promise.all([getDataMonster1_5(),
+        getDataLandMarks(),
+        getDataTreasure1_5()])
     }else if(level === "6-10"){
-        getDataMonster6_10()
-        getDataLandMarks()
-        getDataTreasure6_10()
+        await Promise.all([
+            getDataMonster6_10(),
+            getDataLandMarks(),
+            getDataTreasure6_10()
+        ])
+
     } else if(level === "11-15"){
-        getDataMonster11_15()
-        getDataLandMarks()
-        getDataTreasure11_15()
+        await Promise.all([
+            getDataMonster11_15(),
+            getDataLandMarks(),
+            getDataTreasure11_15()
+        ])
     }
 }
   

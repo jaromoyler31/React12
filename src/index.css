@@ -13,7 +13,7 @@ body {
   background-color: #303236;
 }
 
-.navbar {
+.navbar, .holder {
   background-color: #1f1f1f;
 }
 
@@ -68,3 +68,19 @@ video {
   padding: 10px 30px;
 }
 
+.button {
+  background-color: #ad2831;
+  color: #fff;
+  border: none;
+}
+
+.button:hover {
+  background-color: #b43c44;
+}
+
+.difficulty {
+  color: #fff;
+  background-color: #6D6D6D;
+  padding: 5px 15px;
+  border: none;
+}
