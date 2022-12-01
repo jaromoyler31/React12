@@ -1,17 +1,13 @@
+
 import React, { useState } from 'react';
 import Collapse from 'react-bootstrap/Collapse';
-import { decisionN, npcStrength, monsterType, monsterSize } from '../randomMaster';
-import MonsterStats from '../components/StatBlock'
+import { decisionN  } from '../randomMaster';
 import { verb } from '../arrays';
-import MonsterImage from "../assets/MPaw.png"
-
-
 let new_verb = verb.humanoid[Math.floor(Math.random()*verb.humanoid.length)]
-
-
 export default function RandomResult({verbs, landmark,treasure,npc, monster,numberMonster,numberNPC,randomLandMarkEffect}){
     const [open, setOpen] = useState(false);
     new_verb = verb.humanoid[Math.floor(Math.random()*verb.humanoid.length)]
+    
     
 
 
@@ -36,7 +32,9 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
                     <Collapse in={open}>
                     
                         <div id="example-collapse-text" className="text-light">
-                        {npcStrength}
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+                        labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </Collapse>
                 </div>
@@ -61,14 +59,19 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
         return(
             <>
             <div className="npc-stats">
+                <span
+                    onClick={() => setOpen(!open)}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open} 
+                ><i className="bi bi-chevron-down"></i></span>
                 <div className='hodler'>
                     <h1 className="text-light">{monster}</h1>
-                    <div className="text-light fst-italic">
-                        <span>{monsterSize} </span> <span>{monsterType}</span>
-                    </div>
                     <Collapse in={open}>
+                    
                         <div id="example-collapse-text" className="text-light">
-                        <MonsterStats></MonsterStats>
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+                        labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </Collapse>
                 </div>
@@ -95,36 +98,30 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
         return(
             <>
             <div className="npc-stats">
-                <div>
-                    <div className="d-flex justify-content-center">
-                        <img src={MonsterImage} width="150px" />
-                        <div>
-                            <div className="d-flex">
-                                <h1 className="text-light">{monster}</h1>
-                                <span
-                                onClick={() => setOpen(!open)}
-                                aria-controls="example-collapse-text"
-                                aria-expanded={open}
-                                className="text-light"
-                            ><i className="bi bi-chevron-down"></i></span>
-                            </div>
-                            <div className="text-light fst-italic d-flex">
-                                <span>{monsterSize} {monsterType}</span>
-                            </div>
-                        </div>
-                    </div>
+                <span
+                    onClick={() => setOpen(!open)}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open}
+                ><i className="bi bi-chevron-down"></i></span>
+                <div className='hodler'>
+                    <h1 className="text-light">{monster}</h1>
                     <Collapse in={open}>
                     
                         <div id="example-collapse-text" className="text-light">
-                        <MonsterStats></MonsterStats>
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+                        labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </Collapse>
                 </div>
                 <div className='hodler'>
                     <h1 className="text-light">{npc}</h1>
                     <Collapse in={open}>
+                    
                         <div id="example-collapse-text" className="text-light">
-                        <p>{npcStrength}</p>
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+                        labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </Collapse>
                 </div>
