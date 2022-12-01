@@ -26,6 +26,7 @@ export default function Encounter() {
         setNumberNPC(NumberOfNPC)
         setNumberMonster(numberOfMonsters)
         setRandomEffect(randomEffect)
+
     }
     
 
@@ -45,10 +46,9 @@ export default function Encounter() {
             <br />
             <input className="button mt-5 px-4 py-2" type="submit" value="Generate Encounter" onClick={clickHandle} />
             </form>
-
-
+            <div className="addDisplay">
             {isReady ? <RandomResult verbs = {verbs} landmark={landmark} treasure={treasure} npc={npc} monster={monster} numberMonster={numberMonster} numberNPC={numberNPC} randomLandMarkEffect={randomLandMarkEffect} />: null}
-
+            </div>
             
         </div>
         
