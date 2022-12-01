@@ -643,7 +643,8 @@ async function RandomMonster1(level){
         ])
     }
 }
-  
-export default RandomMonster1;
 
 
+
+export default RandomMonster1; 
+ 
