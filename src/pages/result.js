@@ -108,9 +108,9 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
     const [NPCImageURL, setNPCImageURL] = useState(NStaff)
 
     useEffect( () => {
-        if (npc === 'Spy' || npc === 'Corpse Thief' || npc === 'Scout' || npc === 'Assassin') 
+        if (npc === 'Spy' || npc === 'Corpse Thief' || npc === 'Scout' || npc === 'Assassin' || npc === 'Cult Fanatic') 
             setNPCImageURL(NRogue)
-        else if (npc === 'Mage' || npc === 'Druid' || npc === 'Cult Fanatic' || npc === 'Priest' || npc === 'Tribal Warrior')
+        else if (npc === 'Mage' || npc === 'Druid' || npc === 'Cultist' || npc === 'Priest' || npc === 'Tribal Warrior')
             setNPCImageURL(NStaff)
         else if (npc === 'Commoner' || npc === 'Noble')
             setNPCImageURL(NNormie)
