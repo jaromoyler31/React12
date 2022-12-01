@@ -14,11 +14,42 @@ export let randomVerb // important
 export let randomNPCinfo // important
 export let randomEffect
 export let decisionN
+export let randomMonster
+
+
+//Getting Stats for Monsters
+export let monsterType
+export let monsterSize
+export let monsterAC
+export let monsterHP
+export let monsterSpeed
+export let monsterStr
+export let monsterDex
+export let monsterCon
+export let monsterInt
+export let monsterWis
+export let monsterCha
+export let monsterLang
+
+
+//Getting Stats for NPCs
+export let npcType
+export let npcSize
+export let npcAC
+export let npcHP
+export let npcSpeed
+export let npcStr
+export let npcDex
+export let npcCon
+export let npcInt
+export let npcWis
+export let npcCha
+export let npcLang
 
 //level 1-5
 async function getDataMonster1_5() {
     let decision = Math.floor(Math.random() *3+1)
-    let randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
+    randomMonster = character.monster.M1_5[Math.floor(Math.random()*character.monster.M1_5.length)] 
 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
@@ -46,6 +77,21 @@ async function getDataMonster1_5() {
         console.log(NumberOfNPC+" "+npc.results[0].name)
         
         randomNPCinfo = npc.results[0].name
+
+        // getting NPC stats
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
+
         getDataVerb()
         return npc
 
@@ -54,6 +100,21 @@ async function getDataMonster1_5() {
         const monster = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+randomMonster+"&document=&document__slug="
         ).then(result => result.json());
         console.log(monster)
+
+        // getting stats
+        monsterType = monster.results[0].type
+        monsterSize = monster.results[0].size
+        monsterAC = monster.results[0].armor_class
+        monsterHP = monster.results[0].hit_points
+        monsterSpeed = monster.results[0].speed.walk
+        monsterStr = monster.results[0].strength
+        monsterDex = monster.results[0].dexterity
+        monsterCon = monster.results[0].constitution
+        monsterInt = monster.results[0].intelligence
+        monsterWis = monster.results[0].wisdom
+        monsterCha = monster.results[0].charisma
+        monsterLang = monster.results[0].languages
+
         let rating = monster.results[0].challenge_rating
         verb12=2
 
@@ -110,10 +171,41 @@ async function getDataMonster1_5() {
             numberOfMonsters = 1
         }
         console.log(monster)
+
+        // getting stats
+        monsterType = monster.results[0].type
+        monsterSize = monster.results[0].size
+        monsterAC = monster.results[0].armor_class
+        monsterHP = monster.results[0].hit_points
+        monsterSpeed = monster.results[0].speed.walk
+        monsterStr = monster.results[0].strength
+        monsterDex = monster.results[0].dexterity
+        monsterCon = monster.results[0].constitution
+        monsterInt = monster.results[0].intelligence
+        monsterWis = monster.results[0].wisdom
+        monsterCha = monster.results[0].charisma
+        monsterLang = monster.results[0].languages
+
+
         console.log("1 "+monster.results[0].name)
         
         randomMonsterInfo =monster.results[0].name
         randomNPCinfo = npc.results[0].name
+        
+        // Getting NPC stats
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
+
 
         getDataVerb()
         return monster + " " + npc
@@ -129,7 +221,7 @@ function getDataTreasure1_5(){
 
 //level 6-10
 async function getDataMonster6_10() {
-    let decision = Math.floor(Math.random() *3+1)
+    let decision =Math.floor(Math.random() *3+1)
     let randomMonster =character.monster.M6_10[Math.floor(Math.random()*character.monster.M6_10.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
@@ -155,6 +247,21 @@ async function getDataMonster6_10() {
         }
 
         randomNPCinfo = npc.results[0].name
+        
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
+
+
         console.log(NumberOfNPC+" "+npc.results[0].name)
         getDataVerb()
         return npc
@@ -164,6 +271,22 @@ async function getDataMonster6_10() {
         const monster = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+randomMonster+"&document=&document__slug="
         ).then(result => result.json());
         console.log(monster)
+
+        // getting stats
+        monsterType = monster.results[0].type
+        monsterSize = monster.results[0].size
+        monsterAC = monster.results[0].armor_class
+        monsterHP = monster.results[0].hit_points
+        monsterSpeed = monster.results[0].speed.walk
+        monsterStr = monster.results[0].strength
+        monsterDex = monster.results[0].dexterity
+        monsterCon = monster.results[0].constitution
+        monsterInt = monster.results[0].intelligence
+        monsterWis = monster.results[0].wisdom
+        monsterCha = monster.results[0].charisma
+        monsterLang = monster.results[0].languages
+
+
         let rating = monster.results[0].challenge_rating
         verb12=2
 
@@ -235,9 +358,38 @@ async function getDataMonster6_10() {
         }
         console.log(monster)
         console.log("1 "+monster.results[0].name)
+
+        // getting stats
+        monsterType = monster.results[0].type
+        monsterSize = monster.results[0].size
+        monsterAC = monster.results[0].armor_class
+        monsterHP = monster.results[0].hit_points
+        monsterSpeed = monster.results[0].speed.walk
+        monsterStr = monster.results[0].strength
+        monsterDex = monster.results[0].dexterity
+        monsterCon = monster.results[0].constitution
+        monsterInt = monster.results[0].intelligence
+        monsterWis = monster.results[0].wisdom
+        monsterCha = monster.results[0].charisma
+        monsterLang = monster.results[0].languages
+
         
         randomMonsterInfo =monster.results[0].name
         randomNPCinfo = npc.results[0].name
+        
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
+
 
         getDataVerb()
         return monster + " " + npc
@@ -254,7 +406,7 @@ function getDataTreasure6_10(){
 //level 11-15
 async function getDataMonster11_15() {
     let decision = Math.floor(Math.random() *3+1)
-    let randomMonster = character.monster.M11_15[Math.floor(Math.random()*character.monster.M11_15.length)] 
+    randomMonster = character.monster.M11_15[Math.floor(Math.random()*character.monster.M11_15.length)] 
     let randomNPC = character.npc[Math.floor(Math.random()*character.npc.length)]
     console.log("----------------------------------------------------")
 
@@ -279,6 +431,20 @@ async function getDataMonster11_15() {
         console.log(NumberOfNPC+" "+npc.results[0].name)
 
         randomNPCinfo = npc.results[0].name
+        
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
+
         getDataVerb()
         return npc
 
@@ -287,6 +453,21 @@ async function getDataMonster11_15() {
         const monster = await fetch("https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=&name="+randomMonster+"&document=&document__slug="
         ).then(result => result.json());
         console.log(monster)
+
+        // getting stats
+        monsterType = monster.results[0].type
+        monsterSize = monster.results[0].size
+        monsterAC = monster.results[0].armor_class
+        monsterHP = monster.results[0].hit_points
+        monsterSpeed = monster.results[0].speed.walk
+        monsterStr = monster.results[0].strength
+        monsterDex = monster.results[0].dexterity
+        monsterCon = monster.results[0].constitution
+        monsterInt = monster.results[0].intelligence
+        monsterWis = monster.results[0].wisdom
+        monsterCha = monster.results[0].charisma
+        monsterLang = monster.results[0].languages
+
         let rating = monster.results[0].challenge_rating
         verb12=2
 
@@ -376,8 +557,36 @@ async function getDataMonster11_15() {
         console.log(monster)
         console.log("1 "+monster.results[0].name)
         
+
+        //Getting Stats
+        monsterType = monster.results[0].type
+        monsterSize = monster.results[0].size
+        monsterAC = monster.results[0].armor_class
+        monsterHP = monster.results[0].hit_points
+        monsterSpeed = monster.results[0].speed.walk
+        monsterStr = monster.results[0].strength
+        monsterDex = monster.results[0].dexterity
+        monsterCon = monster.results[0].constitution
+        monsterInt = monster.results[0].intelligence
+        monsterWis = monster.results[0].wisdom
+        monsterCha = monster.results[0].charisma
+        monsterLang = monster.results[0].languages
+
         randomMonsterInfo =monster.results[0].name
         randomNPCinfo = npc.results[0].name
+
+        npcType = npc.results[0].type
+        npcSize = npc.results[0].size
+        npcAC = npc.results[0].armor_class
+        npcHP = npc.results[0].hit_points
+        npcSpeed = npc.results[0].speed.walk
+        npcStr = npc.results[0].strength
+        npcDex = npc.results[0].dexterity
+        npcCon = npc.results[0].constitution
+        npcInt = npc.results[0].intelligence
+        npcWis = npc.results[0].wisdom
+        npcCha = npc.results[0].charisma
+        npcLang = npc.results[0].languages
 
         getDataVerb()
         return monster + " " + npc
@@ -413,24 +622,25 @@ function getDataVerb(){
 
 
 
-
-
-
-
-function RandomMonster1(level){
+async function RandomMonster1(level){
     
     if(level === "1-5"){
-        getDataMonster1_5()
-        getDataLandMarks()
-        getDataTreasure1_5()
+        await Promise.all([getDataMonster1_5(),
+        getDataLandMarks(),
+        getDataTreasure1_5()])
     }else if(level === "6-10"){
-        getDataMonster6_10()
-        getDataLandMarks()
-        getDataTreasure6_10()
+        await Promise.all([
+            getDataMonster6_10(),
+            getDataLandMarks(),
+            getDataTreasure6_10()
+        ])
+
     } else if(level === "11-15"){
-        getDataMonster11_15()
-        getDataLandMarks()
-        getDataTreasure11_15()
+        await Promise.all([
+            getDataMonster11_15(),
+            getDataLandMarks(),
+            getDataTreasure11_15()
+        ])
     }
 }
   
