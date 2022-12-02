@@ -1,5 +1,8 @@
 import NavComp from '../components/NavComp';
 
-return ( 
-        <NavComp></NavComp>
-)
+export default function About() {
+
+    return ( 
+            <NavComp></NavComp>
+    )
+}

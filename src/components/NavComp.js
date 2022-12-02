@@ -28,8 +28,10 @@ export default function NavComp() {
         <Offcanvas.Body>
           <Nav className="justify-content-end flex-grow-1">
             <span className="ps-3"><Link className="nav-link" to={'/'}>Home</Link></span>
-            <span className="ps-3"><Link className="nav-link" to={'/encounter'}>App</Link></span>
-            <span className="ps-3"><Nav.Link href="#action2">Link</Nav.Link></span>
+            <span className="ps-3"><Link className="nav-link" to={'/encounter'}>Generator</Link></span>
+            <span className="ps-3"><Link className="nav-link" to={'/about'}>About</Link></span>
+            <span className="ps-3"><Link className="nav-link" to={'/team'}>Team</Link></span>
+
           </Nav>
         </Offcanvas.Body>
       </Navbar.Offcanvas>
