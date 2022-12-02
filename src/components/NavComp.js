@@ -1,11 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import FCLogo from '../assets/FCLogo.png'
-import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
-
+import { Link } from "react-router-dom";
+import FCSpinner from "../assets/FCSpinner.png"
 
 export default function NavComp() {
   return (
@@ -23,13 +22,14 @@ export default function NavComp() {
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-            Offcanvas
+          <img className="img-fluid" width="75px" alt="Fighting Chance" href="#" src={FCSpinner} /> SITE MAP
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Nav className="justify-content-end flex-grow-1 pe-3">
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+          <Nav className="justify-content-end flex-grow-1">
+            <span className="ps-3"><Link className="nav-link" to={'/'}>Home</Link></span>
+            <span className="ps-3"><Link className="nav-link" to={'/encounter'}>App</Link></span>
+            <span className="ps-3"><Nav.Link href="#action2">Link</Nav.Link></span>
           </Nav>
         </Offcanvas.Body>
       </Navbar.Offcanvas>

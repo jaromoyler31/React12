@@ -17,10 +17,56 @@ body {
   flex-wrap: nowrap;
 }
 
-.navbar, .holder, .offcanvas-header, .offcanvas-body {
+.navbar, .holder {
   background-color: #1f1f1f;
-  color: #fff;
 }
+
+.offcanvas-header {
+  font-family: 'MedievalSharp', cursive;
+}
+
+.offcanvas-header, .offcanvas-body {
+    background-color: #303236;
+    color: #fff;
+}
+
+.offcanvas-body {
+  background-image: url("assets/OffCanvasBg.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.offcanvas-body a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.offcanvas-body span:after {
+  content: '';
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  width: 0;
+  transition: width 0.2s ease;
+  left: 0px;
+  right: 0;
+  margin: 0 auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.offcanvas-body span:hover {
+  background-color: #1f1f1f;
+  width: 100%;
+}
+
+.offcanvas-body span:hover:after {
+    width: 100%;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

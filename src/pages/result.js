@@ -122,8 +122,6 @@ export default function RandomResult({verbs, landmark,treasure,npc, monster,numb
             [npc]
     ) 
 
-
-
     if(decisionN === 1){
         let landEffect
 
